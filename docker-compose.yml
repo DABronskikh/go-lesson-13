@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.1'
 
 services:
   bankdb:
@@ -6,6 +6,8 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_PASSWORD=pass
-      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=example
+      - POSTGRES_USER=postgres
       - POSTGRES_DB=db
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
